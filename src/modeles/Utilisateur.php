@@ -10,5 +10,7 @@ class Utilisateur extends \Illuminate\Database\Eloquent\Model
 
 	public function listes() {
         return $this->hasMany('wishlist\modele\Liste', 'id_utilisateur');
+		
     }
+	
 }
