@@ -10,10 +10,12 @@ class Iteme extends \Illuminate\Database\Eloquent\Model
 
     public function liste() {
         return $this->belongsTo('wishlist\modele\Liste' , 'liste_id');
+        
     }
 
     public function Cagnottes() {
         return $this->hasMany('wishlist\modele\Cagnotte' , 'iteme_id');
+        
     }
 
 }
