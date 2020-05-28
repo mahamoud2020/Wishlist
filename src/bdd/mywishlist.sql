@@ -137,7 +137,7 @@ CREATE TABLE `rappels` (
 
 CREATE TABLE `activations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) unsigned NOT NULL,
+  `id_utilisateur` int(10) unsigned NOT NULL,
   `code_activation` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `completed` tinyint(1) NOT NULL DEFAULT '0',
   `completed_at` timestamp NULL DEFAULT NULL,
