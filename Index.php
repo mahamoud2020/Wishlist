@@ -112,29 +112,29 @@ $app->post('/reserver/:name', function($iteme_name) {
 	PI::displayItem($iteme_name);
 });
 
-// Modification item
+// Modification iteme
 
-$app->post('/edit-item/:name', function($item_name) {
+$app->post('/edit-iteme/:name', function($iteme_name) {
 	$_SESSION['item_action'] = "editer";
 	PI::displayItem($iteme_name);
 });
 
 // suppression item
 
-$app->post('/delete-item/:name', function($iteme_name) {
+$app->post('/delete-iteme/:name', function($iteme_name) {
 	$_SESSION['iteme_action'] = "supprimer";
 	PI::displayItem($iteme_name);
 });
 
 $app->post('/upload-image/:name', function($item_name) {
 	$_SESSION['item_action'] = "uploadImage";
-	PI::displayItem($item_name);
+	PI::displayItem($iteme_name);
 });
 
 // Supprimer une image
-$app->post('/delete-image/:name', function($item_name) {
+$app->post('/delete-image/:name', function($iteme_name) {
 	$_SESSION['item_action'] = "supprimerImage";
-	PI::displayItem($item_name);
+	PI::displayItem($iteme_name);
 });
 
 // Authenifier
