@@ -77,5 +77,11 @@ $app->post('/add-mess/:token', function($token) {
   FL::ajouterMessage($token);
 });
 
-
+//liste visible 
+app->post('/liste-published/:id', function($token) {
+  FL::publication($token);
+});
+$app->post('/edit-liste/:id', function($token) {
+  FL::modifier($token);
+});
 
