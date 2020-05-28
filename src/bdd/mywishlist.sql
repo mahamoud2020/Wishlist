@@ -42,7 +42,7 @@ INSERT INTO `iteme` (`id`, `id_liste`, `nom`, `Description`, `url`, `Tarificatio
 
 (3,	2,	'Projection',	'projection histoire',	'',	14.00, 'jeton_prive3'),
 
-(4,	3,	'Dessert',	'Dessert aux fruits', '',	11.00, 'jeton_prive4'),
+(4,	3,	'Dessert',	'Dessert aux fruits', '',	10.00, 'jeton_prive4'),
 
 (5,	3,	'Exposition',	'Expoition film romantique', '',	9.00, 'Jeton_prive5'),
 
@@ -52,7 +52,7 @@ INSERT INTO `iteme` (`id`, `id_liste`, `nom`, `Description`, `url`, `Tarificatio
 
 (8,	3,	'Dance',	'spectacle e dance classique', '',	15.00, 'Jeton_prive8'),
 
-(9,	3,	'Anniversaire',	'gateau + Cadeaux', '',	40.00, 'Jeton_prive9'),
+(9,	3,	'Anniversaire',	'gateau + Cadeaux', '',	60.00, 'Jeton_prive9'),
 
 (10,	2,	'Coca', 'Bouteille de Coca + flutes + jeux de devinette', '', 15.00, 'Jeton_prive10'),
 
