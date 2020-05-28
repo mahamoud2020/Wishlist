@@ -9,6 +9,6 @@ class Utilisateur extends \Illuminate\Database\Eloquent\Model
     public $timestamps = false;
 
 	public function listes() {
-        return $this->hasMany('wishlist\modele\Liste', 'utilisateur_id');
+        return $this->hasMany('wishlist\modele\Liste', 'id_utilisateur');
     }
 }
