@@ -72,6 +72,10 @@ $app->post('/add-liste', function() {
 $app->post('/add-user', function() {
 	FL::ajoutUtilisateur();
 });
+//message à la liste
+$app->post('/add-mess/:token', function($token) {
+  FL::ajouterMessage($token);
+});
 
 
 
