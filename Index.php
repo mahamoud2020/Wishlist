@@ -34,6 +34,8 @@ $app->post('/search', function () {
 	Outils::goTo('liste/'. $_POST['token'], 'Redirection vers la liste en cours..');
 });
 
+// LISTE
+
 $app->get('/liste/:token', function($token) {
 	Alerte::getSuccesAlert('item_added', "Objet ajouté à la liste");
 	Alerte::getSuccesAlert('add_message', "Message ajouté à la liste.");
@@ -55,7 +57,7 @@ $app->post('/saveliste-remove/:token', function($token) {
 });
 
 
-//creation de la liste
+//creation d'une liste
 $app->get('/add-liste-form', function() {
 	Alerte::getErrorAlert('date_fault', 'Date saisie invalide');
 	Alerte::getErrorAlert('list_exist', 'Une liste avec le nom identique existe déjà !');
