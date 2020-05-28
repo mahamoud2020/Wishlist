@@ -19,4 +19,4 @@ $cf->setConfig('src/conf/conf.ini');
 db = $cf->makeConnection();
 $app = new \Slim\Slim();
 
-// fais moi signe mahmoud si tu lis sa
+//tu peu mettre l'accueil mahmoud
