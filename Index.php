@@ -20,3 +20,5 @@ db = $cf->makeConnection();
 $app = new \Slim\Slim();
 
 //tu peu mettre l'accueil mahmoud
+app->get('/', function () {
+	Alerte::getErrorAlert('list_missing', 'Aucune liste trouvée');
