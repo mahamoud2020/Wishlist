@@ -12,4 +12,8 @@ use wishlist\fonction\FctnCagnotte as CG;
 use wishlist\fonction\CreateurItem as CI;
 use wishlist\fonction\GestionImage as GI;
 
+
+// CONNECTION DU BDD
+$cf = new CF();
+
 // fais moi signe mahmoud si tu lis sa
