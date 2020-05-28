@@ -107,23 +107,23 @@ $app->get('/set-cagnotte/:name', function($iteme_name) {
 
 // Reservation item 
 
-$app->post('/reserver/:name', function($item_name) {
-	$_SESSION['item_action'] = "reservation";
-	PI::displayItem($item_name);
+$app->post('/reserver/:name', function($iteme_name) {
+	$_SESSION['iteme_action'] = "reservation";
+	PI::displayItem($iteme_name);
 });
 
 // Modification item
 
 $app->post('/edit-item/:name', function($item_name) {
 	$_SESSION['item_action'] = "editer";
-	PI::displayItem($item_name);
+	PI::displayItem($iteme_name);
 });
 
 // suppression item
 
-$app->post('/delete-item/:name', function($item_name) {
-	$_SESSION['item_action'] = "supprimer";
-	PI::displayItem($item_name);
+$app->post('/delete-item/:name', function($iteme_name) {
+	$_SESSION['iteme_action'] = "supprimer";
+	PI::displayItem($iteme_name);
 });
 
 $app->post('/upload-image/:name', function($item_name) {
