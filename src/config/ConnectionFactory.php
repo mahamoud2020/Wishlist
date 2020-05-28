@@ -16,3 +16,24 @@ class ConnectionFactory {
             throw new DBException("config file could not be parsed\n");
     }
 
+ public static function makeConnection(){
+        $db = new DB();
+        $db->addConnection( [
+            'driver'    =>  self::$config['db_driver'],
+            'host'      =>  self::$config['host'],
+            'database'  =>  self::$config['dbname'],
+            'username'  =>  self::$config['db_user'],
+            'password'  =>  self::$config['db_password'],
+            'charset'   =>  self::$config['db_charset'],
+            'collation' =>  self::$config['db_collation'],
+            'prefix'    =>  ''
+        ]);
+
+        $db->setAsGlobal();
+        $db->bootEloquent();
+
+        return self::$db;
+    }
+	
+}
+
