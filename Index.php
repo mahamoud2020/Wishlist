@@ -86,4 +86,10 @@ app->post('/liste-published/:id', function($token) {
 $app->post('/edit-liste/:id', function($token) {
   FL::modifier($token);
 });
-
+// ITEME
+app->get('/add-item-form', function() {
+	Formulaire::ajoutItem();
+});
+$app->post('/add-item', function() {
+	CI::itemAdd();
+});
