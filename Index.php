@@ -104,3 +104,82 @@ $app->post('/add-cagnotte/:name', function($iteme_name) {
 $app->get('/set-cagnotte/:name', function($iteme_name) {
 	CG::setCagnotte($iteme_name);
 });
+
+// Reservation item 
+
+$app->post('/reserver/:name', function($item_name) {
+	$_SESSION['item_action'] = "reservation";
+	PI::displayItem($item_name);
+});
+
+// Modification item
+
+$app->post('/edit-item/:name', function($item_name) {
+	$_SESSION['item_action'] = "editer";
+	PI::displayItem($item_name);
+});
+
+// suppression item
+
+$app->post('/delete-item/:name', function($item_name) {
+	$_SESSION['item_action'] = "supprimer";
+	PI::displayItem($item_name);
+});
+
+$app->post('/upload-image/:name', function($item_name) {
+	$_SESSION['item_action'] = "uploadImage";
+	PI::displayItem($item_name);
+});
+
+// Supprimer une image
+$app->post('/delete-image/:name', function($item_name) {
+	$_SESSION['item_action'] = "supprimerImage";
+	PI::displayItem($item_name);
+});
+
+// Authenifier
+
+$app->post('/connection', function() {
+	if (isset($_POST['signin']))
+		AUTH::Connection();
+	else if (isset($_POST['signup']))
+    	AUTH::Inscription();
+});
+// Deconnection
+$app->get('/deconnection', function() {
+	AUTH::Deconnection();
+});
+
+// Affichage du compte
+
+$app->get('/compte', function() {
+	PC::displayCompte();
+});
+$app->get('/auth-connexion', function() {
+	Formulaire::connection();
+});
+$app->get('/auth-inscription', function() {
+	Formulaire::inscription();
+})
+	
+// modification compte
+	
+$app->post('/edit-compte', function () {
+	$_SESSION['compte_action'] = "editer";
+	PC::displayCompte();
+});
+
+$app->post('/change-password', function () {
+	$_SESSION['compte_action'] = "change_password";
+	PC::displayCompte();
+});
+
+$app->post('/delete-compte', function () {
+	AUTH::deleteUser();
+	Outils::goTo('index.php', 'Compte supprimé!');
+});
+
+$app->run();
+
+Outils::footerHTML();
+
