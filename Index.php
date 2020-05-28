@@ -93,3 +93,14 @@ app->get('/add-item-form', function() {
 $app->post('/add-item', function() {
 	CI::itemAdd();
 });
+$app->get('/item/:name', function($item_name) {
+	PI::displayItem($item_name);
+});
+// AjoutER une cagnotte pour un iteme
+$app->post('/add-cagnotte/:name', function($iteme_name) {
+	CG::addCagnotte($iteme_name);
+});
+// Définition d'une cagnote pour un objet quelconque
+$app->get('/set-cagnotte/:name', function($iteme_name) {
+	CG::setCagnotte($iteme_name);
+});
