@@ -13,10 +13,10 @@ class Liste extends \Illuminate\Database\Eloquent\Model
     }
 
     public function iteme() {
-        return $this->hasMany('wishlist\modele\Iteme', 'liste_id');
+        return $this->hasMany('wishlist\modele\Iteme', 'id_liste');
     }
 
     public function message() {
-        return $this->hasMany('wishlist\modele\Message', 'liste_numero');
+        return $this->hasMany('wishlist\modele\Message', 'numero_liste');
     }
 }
