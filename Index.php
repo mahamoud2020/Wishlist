@@ -54,6 +54,8 @@ $app->post('/saveliste-remove/:token', function($token) {
 	FL::unsaveListe($token);
 });
 
+
+//creation de la liste
 $app->get('/add-liste-form', function() {
 	Alerte::getErrorAlert('date_fault', 'Date saisie invalide');
 	Alerte::getErrorAlert('list_exist', 'Une liste avec le nom identique existe déjà !');
