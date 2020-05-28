@@ -22,3 +22,54 @@ $app = new \Slim\Slim();
 //accueil 
 app->get('/', function () {
 	Alerte::getErrorAlert( 'Aucune liste detecté');
+
+	
+	Alerte::clear();
+	echo '<h4>soyez le bienevenu sur l/importance de liste de souhait.</h4>';
+	Formulaire::rechercheListe();
+	echo '<hr>';
+	FL::displayAll();
+});
+$app->post('/search', function () {
+	Outils::goTo('liste/'. $_POST['token'], 'Redirection vers la liste en cours..');
+});
+
+$app->get('/liste/:token', function($token) {
+	Alerte::getSuccesAlert('item_added', "Objet ajouté à la liste");
+	Alerte::getSuccesAlert('add_message', "Message ajouté à la liste.");
+	FL::liste($token);
+});
+
+$app->get('/myliste', function() {
+	FL::displayOwnListe();
+});
+$app->get('/saveliste', function() {
+	FL::displaySaveListe();
+});
+$app->post('/saveliste-add', function() {
+	FL::saveListe();
+});
+
+$app->post('/saveliste-remove/:token', function($token) {
+	FL::unsaveListe($token);
+});
+
+$app->get('/add-liste-form', function() {
+	Alerte::getErrorAlert('date_fault', 'Date saisie invalide');
+	Alerte::getErrorAlert('list_exist', 'Une liste avec le nom identique existe déjà !');
+	if(AUTH::isConnect()){
+		Formulaire::ajouterListe();
+		echo '<hr>';
+	}
+
+Formulaire::creeListe();
+});
+$app->post('/add-liste', function() {
+	FL::cree();
+});
+$app->post('/add-user', function() {
+	FL::ajoutUtilisateur();
+});
+
+
+
