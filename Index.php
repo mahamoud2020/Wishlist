@@ -16,5 +16,7 @@ use wishlist\fonction\GestionImage as GI;
 // CONNECTION DU BDD
 $cf = new CF();
 $cf->setConfig('src/conf/conf.ini');
+db = $cf->makeConnection();
+$app = new \Slim\Slim();
 
 // fais moi signe mahmoud si tu lis sa
