@@ -14,4 +14,5 @@ class Message extends \Illuminate\Database\Eloquent\Model
         return $this->belongsTo('wishlist\modele\Liste' , 'id_message');
     }
 
+	
 }
