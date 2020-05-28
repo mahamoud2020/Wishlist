@@ -19,6 +19,6 @@ $cf->setConfig('src/conf/conf.ini');
 db = $cf->makeConnection();
 $app = new \Slim\Slim();
 
-//tu peu mettre l'accueil mahmoud
+//accueil 
 app->get('/', function () {
-	Alerte::getErrorAlert('list_missing', 'Aucune liste trouvée');
+	Alerte::getErrorAlert( 'Aucune liste detecté');
