@@ -19,14 +19,14 @@ class ConnectionFactory {
  public static function makeConnection(){
         $db = new DB();
         $db->addConnection( [
-            'driver'    =>  self::$config['db_driver'],
-            'host'      =>  self::$config['host'],
-            'database'  =>  self::$config['dbname'],
-            'username'  =>  self::$config['db_user'],
-            'password'  =>  self::$config['db_password'],
+            'driver'    =>  self::$config['db_mysql'],
+            'host'      =>  self::$config['db_host'],
+            'database'  =>  self::$config['db_database'],
+            'username'  =>  self::$config['db_newuser'],
+            'password'  =>  self::$config['db_wampp'],
             'charset'   =>  self::$config['db_charset'],
             'collation' =>  self::$config['db_collation'],
-            'prefix'    =>  ''
+            
         ]);
 
         $db->setAsGlobal();
