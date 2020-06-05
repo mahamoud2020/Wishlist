@@ -10,9 +10,6 @@ use wishlist\modele\Reservation;
 use wishlist\fonction\Alerte;
 use wishlist\fonction\FctnCagnotte as CG;
 
-use wishlist\divers\Formulaire as FORM;
-use wishlist\divers\Outils;
-
 
 class ParticipantItem {
 
