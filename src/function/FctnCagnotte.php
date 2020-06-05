@@ -8,7 +8,7 @@ use wishlist\modele\Cagnotte;
 
 use wishlist\fonction\FctnListe as FL;
 
-use wishlist\divers\Outils;
+
 class FctnCagnotte{
 
   public static function set_Cagnotte($nomIteme){
