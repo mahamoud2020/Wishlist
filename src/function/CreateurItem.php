@@ -67,8 +67,8 @@ class CreateurIteme {
 			$iteme->nom = strip_tags($_POST['nom']);
 			$iteme->descr = strip_tags($_POST['description']);
 			$iteme->tarif = strip_tags($_POST['tarif']);
-			$iteme->token_private = Outils::generateToken();
-			$iteme->save();
+
+		        $iteme->save();
 			Alerte::set('iteme ajouté');
 		}
 		
