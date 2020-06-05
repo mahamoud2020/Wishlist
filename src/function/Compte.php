@@ -2,7 +2,7 @@
 
 namespace wishlist\fonction;
 
-use Cartalyst\Sentinel\Native\Facades\Sentinel;
+
 use wishlist\modele\Utilisateur;
 
 
