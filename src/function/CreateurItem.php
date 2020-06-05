@@ -2,10 +2,7 @@
 
 namespace wishlist\fonction;
 
-use wishlist\divers\Outils;
-
 use wishlist\fonction\Alerte;
-
 use wishlist\modele\Iteme;
 use wishlist\modele\Liste;
 
@@ -30,9 +27,6 @@ class CreateurIteme {
 				<p class="price">Prix : ' . $iteme->tarif . '€</p>
 			</div>
 			<div class="expi">';
-		if (Outils::liste_expiration($iteme->liste->expiration))
-		{
-			echo 'Reservation : ';
 			if ( $iteme->reservation == 0) {
 				echo 'Non reservé';
 			}
@@ -77,7 +71,7 @@ class CreateurIteme {
 			$iteme->save();
 			Alerte::set('iteme ajouté');
 		}
-		Outils::goTo(Outils::getArbo(). 'liste/' . $_SESSION['wishlist_liste_token'], 'Retourne à la liste');
+		
 	}
 
 	public static function itemEdit($iteme) {
@@ -90,7 +84,7 @@ class CreateurIteme {
 
 	public static function iteme_supprimer($iteme) {
 		$iteme->delete();
-		Outils::goTo('../liste/' . $_SESSION['wishlist_liste_token'], 'Item supprimé, retour a la liste', 1);
+		
 		exit();
 	}
 
